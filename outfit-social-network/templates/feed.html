@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    {% include 'base.html' %}
+    <div class="feed-container">
+        <h1>Outfit Feed</h1>
+        <div id="feed">
+            {% for outfit in outfits %}
+                <div class="outfit-post">
+                    <img src="{{ outfit.image_url }}" alt="Outfit Image">
+                    <p>{{ outfit.description }}</p>
+                    <div class="interactions">
+                        <span class="likes">{{ outfit.likes }} Likes</span>
+                        <button class="like-button" data-id="{{ outfit.id }}">Like</button>
+                        <div class="comments">
+                            <h3>Comments:</h3>
+                            <ul>
+                                {% for comment in outfit.comments %}
+                                    <li>{{ comment }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
