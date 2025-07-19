@@ -5,14 +5,14 @@ app = Flask(__name__)
 
 outfits = [
     {
-        'image_url': 'https://i.pinimg.com/originals/1a/2b/3c/1a2b3c4d5e6f.jpg',
+        'image_url': 'https://es.pinterest.com/pin/1337074887341398/',
         'description': 'Outfit casual de verano',
         'likes': 0,
         'comments': [],
         'id': 1
     },
     {
-        'image_url': 'https://i.pinimg.com/originals/7d/8e/9f/7d8e9f0a1b2c.jpg',
+        'image_url': 'https://es.pinterest.com/pin/10203536651424927/',
         'description': 'Look urbano',
         'likes': 0,
         'comments': [],
