@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card" style="width: 22rem;">
+        {% if outfit %}
+        <img src="{{ url_for('static', filename=outfit['image'].replace('static/', '')) }}" class="card-img-top" alt="Outfit">
+        <div class="card-body">
+            <p class="card-text">{{ outfit['description'] }}</p>
+            <form method="post" class="d-flex justify-content-between">
+                <button type="submit" name="action" value="dislike" class="btn btn-outline-danger">No</button>
+                <button type="submit" name="action" value="like" class="btn btn-outline-success">Sí</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="card-body text-center">
+            <p>No hay más outfits para mostrar.</p>
+            <a href="{{ url_for('feed') }}" class="btn btn-primary">Volver al feed</a>
+        </div>
+        {% endif %}
+    </div>
+
+
+    
